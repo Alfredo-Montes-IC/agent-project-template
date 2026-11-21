@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: dev
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+    pull-request-branch-name:
+      prefix: chore/dependabot
+      branch-name-case: lowercase
+    commit-message:
+      prefix: chore(deps)
