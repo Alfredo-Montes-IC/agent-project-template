@@ -24,7 +24,7 @@ Uncustomized template. No application, dependency manifest, deployed service, or
 | Specialist review | [Reusable reviewer roles](../workflows/reviewer-roles.md) | Scoped task evidence and findings |
 | Budget and service selection | [Budget planning](../workflows/budget-planning.md), [budget template](../templates/budget.template.md) | Project costs, current pricing evidence and limits |
 | Dependencies and secrets | [Dependency maintenance](../workflows/dependency-maintenance.md) | Manifests, workflows, findings and updates |
-| Application CI and delivery | [Project CI](../workflows/project-ci.md), [release/recovery](../workflows/release-recovery.md) | Actual component checks, deployment and recovery |
+| Application CI and delivery | [Project CI and configured job inventory](../workflows/project-ci.md), [release/recovery](../workflows/release-recovery.md) | Actual component checks, deployment and recovery |
 | Data migration | [Migration template](../templates/migration.template.md) | Affected data, compatibility and verified recovery |
 | Additional templates | [Imported source templates](../reference/source-templates/README.md) | Optional references; adapt before use |
 
@@ -36,4 +36,4 @@ Store task-specific status in `docs/tasks/` or a linked issue. Keep decisions in
 
 ## Portable agent workflows
 
-Read [agent setup and shared skills](../agents/README.md) for client discovery, the security workflow, local bootstrap, invocation differences, and enforcement limitations. The template includes repository regression checks; no application runtime exists yet.
+Read [agent setup and shared skills](../agents/README.md) for the task-to-skill map, common working lifecycle, client discovery, local bootstrap, invocation differences, and enforcement limitations. The template includes repository regression checks; no application runtime exists yet.
