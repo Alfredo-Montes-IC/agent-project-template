@@ -12,11 +12,40 @@ Codex, current Antigravity App/CLI/IDE, and Gemini CLI discover `.agents/skills/
 | Claude Code | `/security-review` followed by the task | Check its skill/command list; reload skills if needed |
 | Antigravity | `/security-review` where supported, or mention it by name | Inspect Customizations / active skills |
 | Gemini CLI | Explicitly ask to use `security-review` | `/skills list`, then `/skills reload` if needed |
+| GitHub Copilot | Ask it to follow `.github/copilot-instructions.md` and read the relevant shared skill file | Verify repository instruction and skill discovery in the installed surface |
 | Grok Build | `/security-review` if listed, or ask for it by name | Inspect `/skills`; verify in the installed version |
 
 The same approach applies to `project-customization`, `adversarial-code-reviewer`, `debugging`, and `verification`. The workflow content is identical; shortcut syntax, models, tools, permissions and approval prompts remain client-specific. Use the hyphenated name, without spaces. For older Antigravity releases that only support `.agent/skills/`, update the client or configure that legacy location separately; do not create a second independently maintained skill. Other Grok products or agents may behave differently; ask them to read `AGENTS.md` and the relevant skill file directly unless discovery is verified. Do not assume subagent capability.
 
 Antigravity does not automatically load nested `AGENTS.md` files below an opened repository root; explicitly route it to the applicable scoped files. Its `.agents/skills.json` has a client-defined manifest format, so this template keeps its separate mirror configuration in `.agents/skill-mirrors.json`. Verify behavior in the installed client rather than assuming configuration loaded.
+
+## Which skill to use
+
+These are shared task workflows, not separate agents that run automatically. An agent can read a skill directly if its client does not discover it. Apply all relevant rows; for example, a database-backed UI change may need migration, accessibility, security, and verification guidance.
+
+| Task or trigger | Shared skill | Expected result |
+|---|---|---|
+| Initialize a project or change its stack or agent setup | [project-customization](../../.agents/skills/project-customization/SKILL.md) | Adapt instructions and context to confirmed project facts |
+| Investigate unexpected behavior or a failing check | [debugging](../../.agents/skills/debugging/SKILL.md) | Reproduction, cause, fix and evidence or an explicit unknown |
+| Choose and report checks | [verification](../../.agents/skills/verification/SKILL.md) | Risk-appropriate results and unavailable checks |
+| Independently challenge a code change | [adversarial-code-reviewer](../../.agents/skills/adversarial-code-reviewer/SKILL.md) | Findings and disposition for the exact reviewed snapshot |
+| Security-sensitive work or a code PR | [security-review](../../.agents/skills/security-review/SKILL.md) | Review applicable trust boundaries; independent review of the complete PR diff before opening or marking it ready |
+| Change dependencies, actions, or scanners | [dependency-maintenance](../../.agents/skills/dependency-maintenance/SKILL.md) | Provenance, compatibility, verification and recovery evidence |
+| Change stored data, schemas, or persistent state | [data-migration](../../.agents/skills/data-migration/SKILL.md) | Compatibility, rollout and tested recovery plan where applicable |
+| Design, implement, or test a user-facing interface | [accessibility-review](../../.agents/skills/accessibility-review/SKILL.md) | Applicable automated and manual checks, barriers and untested areas |
+| Plan or investigate an actual release, incident, or recovery | [release-recovery](../../.agents/skills/release-recovery/SKILL.md) | Rollout, health and recovery evidence appropriate to the service |
+| Project or change has cost implications | [budget-planning](../../.agents/skills/budget-planning/SKILL.md) | Estimated agent, tool, CI and hosting costs and spending limits |
+| Write or create a PR description | [pr-description](../../.agents/skills/pr-description/SKILL.md) | Description in the shared What/Why/Changes format |
+
+## Common way of working
+
+1. Read the shared contract and context map, check Git status and the task branch, then load the applicable scoped instructions and skills. Follow higher-priority user and host instructions, including their tool and delegation permissions.
+2. Identify the goal, relevant existing behavior and utilities, ownership, acceptance criteria, and unknowns. Preserve unrelated work; record durable decisions in their owning documents.
+3. Implement within scope and run checks appropriate to the change. Distinguish local results, hosted CI, and checks that cannot be run. For client-specific discovery, test the actual installed client and version instead of inferring support from these files.
+4. Obtain the independent reviews required by the [review workflow](../workflows/adversarial-review.md), respecting host delegation restrictions. If no independent reviewer is available, leave the gate pending. A role definition or self-review is not independent evidence.
+5. Review the final diff and report changed behavior, evidence, remaining risks, and any pending handoff or review. Follow the [Git workflow](../standards/GIT_WORKFLOW.md) for staging, commits, and publishing.
+
+This lifecycle applies to each client; invocation, instruction discovery, available tools, and permissions can differ. A reviewer receives the task and exact snapshot independently and reports findings; the author resolves them and requests re-review when needed. For work split among writers, use the [multi-agent workflow](../workflows/multi-agent.md) only when delegation is permitted.
 
 ## Reviewer subagents
 
