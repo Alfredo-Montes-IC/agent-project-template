@@ -29,7 +29,7 @@
 - During implementation, request an independent adversarial subagent when the host permits; use the separate-session fallback in `docs/workflows/adversarial-review.md` if necessary. Before committing, review the final staged snapshot and resolve blocking findings.
 - Before opening or marking ready a code PR, obtain an independent security review using `security-review` on the complete base-to-head diff; fix blocking findings and repeat affected reviews after material changes. Record both review outcomes in the PR. If a required independent review is unavailable, keep the gate pending; do not present author self-review as independent or claim it passed.
 - Assign one writer per file and separate worktrees/branches for parallel implementation. Serialize work when isolation is unavailable.
-- Stage only task-owned files or hunks. Follow `docs/standards/GIT_WORKFLOW.md`; publishing follows the user's authorization.
+- Stage only task-owned files or hunks. After completing and reviewing an authorized change, commit it and use the PR flow through `dev` and `main` unless the user requests otherwise or a required gate is pending. Follow `docs/standards/GIT_WORKFLOW.md`.
 
 ## Shared skills and branch guardrails
 
@@ -38,4 +38,4 @@
 - Work on an allowed task branch from `dev`. Integrate through PRs: task branch to `dev`, then `dev` to `main`. Do not bypass local hooks, change protection settings to pass checks, or directly update protected branches.
 - Run `python3 scripts/bootstrap.py` in a new clone and the real project's applicable checks. Server protections remain pending until verified on GitHub; never present local checks as server enforcement.
 
-- Use the shared `pr-description` skill for PR descriptions. The integration routes above already answer source/destination questions. Delete task branches only after their PR has merged into `dev` and been promoted by PR into `main`; keep `dev` after promotion.
+- Use the shared `pr-description` skill for PR descriptions. The integration routes above already answer source/destination questions. After a task PR is merged into `dev` and promoted by PR into `main`, follow the Git workflow to verify automatic GitHub cleanup and safely delete the corresponding local task branch; keep `dev` and `main`.
