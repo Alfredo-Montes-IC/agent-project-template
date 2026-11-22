@@ -38,4 +38,4 @@
 - Work on an allowed task branch from `dev`. Integrate through PRs: task branch to `dev`, then `dev` to `main`. Do not bypass local hooks, change protection settings to pass checks, or directly update protected branches.
 - Run `python3 scripts/bootstrap.py` in a new clone and the real project's applicable checks. Server protections remain pending until verified on GitHub; never present local checks as server enforcement.
 
-- Use the shared `pr-description` skill for PR descriptions. The integration routes above already answer source/destination questions. After a task PR is merged into `dev` and promoted by PR into `main`, follow the Git workflow to verify automatic GitHub cleanup and safely delete the corresponding local task branch; keep `dev` and `main`.
+- Use the shared `pr-description` skill for PR descriptions. The integration routes above already answer source/destination questions. After a task PR is merged into `dev` and promoted by PR into `main`, follow the Git workflow to verify automatic GitHub cleanup and safely delete the corresponding local task branch; keep `dev` and `main`, and finish on local `dev`.
