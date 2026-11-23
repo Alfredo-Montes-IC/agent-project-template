@@ -1,6 +1,6 @@
 # Reusable independent reviewer roles
 
-Use these task prompts for a separate subagent or session when the host and user permit delegation. Native project role definitions are included for supported clients; see [agent setup](../agents/README.md). They do not automatically spawn agents or guarantee tool permissions. Supply the objective, exact staged tree or commit range, relevant instructions, acceptance criteria, allowed paths, and verification evidence. Do not include secrets. Reviewers should avoid modifying the author's files; the author fixes findings and requests re-review of material changes. The mandatory adversarial and PR security reviews remain governed by [their workflow](adversarial-review.md).
+Use these task prompts for a separate subagent or session when the host and user permit delegation. Native project role definitions are included for supported clients; see [agent setup](../agents/README.md). They do not automatically spawn agents or guarantee tool permissions. Supply the objective, exact staged tree or commit range, relevant instructions, acceptance criteria, allowed paths, and verification evidence. Do not include secrets. Reviewers should avoid modifying the author's files; the author fixes findings and requests re-review of material changes. See the [review workflow](adversarial-review.md) for required reviews.
 
 ## Security reviewer
 
@@ -13,6 +13,10 @@ Read the `verification` skill. Challenge acceptance criteria, test selection, re
 ## Adversarial reviewer
 
 Use the `adversarial-code-reviewer` skill. Independently challenge correctness, requirements, regressions, edge cases, security and tests. A specialist review may contribute evidence, but does not automatically replace the required independent adversarial review. Record identity or session, reviewed revision, findings and outcome. No findings is a report, not proof of absence of defects.
+
+## Code standards reviewer
+
+Use [code-standards-review](../../.agents/skills/code-standards-review/SKILL.md) for every code change. Check the exact reviewed revision against the shared [engineering guidelines](../standards/GUIDELINES.md) and applicable scoped rules. Report concrete issues with clear evidence and neutral language. Check code comments for intent and accuracy. Label preferences as optional. Record this result separately from the adversarial and security reviews.
 
 ## Migration reviewer
 
