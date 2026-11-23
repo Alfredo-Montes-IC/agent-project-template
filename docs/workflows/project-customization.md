@@ -23,6 +23,8 @@ Start with the [client setup](../agents/README.md). Root `AGENTS.md` is the shar
 
 Verify discovery in each installed client and version the project uses. For a client or surface without confirmed automatic discovery, include the root contract, applicable scoped instructions, and relevant skill paths in the task prompt. Do not claim native skill or subagent support based solely on a product name. Keep higher-priority user and host instructions intact.
 
+When a project needs an external tool, follow the [integration and permissions guide](../agents/integrations.md) to record its purpose and access, set up the clients in use, and verify their effective permissions.
+
 ## Finish and maintain
 
 Run `python3 scripts/sync_skills.py --check`, the relevant project verification, and `git diff --check`. Report what was customized, evidence for stack-specific choices, remaining pending items, and any client discovery or checks not verified. Revisit these files when the project or client configuration changes. This workflow does not activate GitHub rules, install global skills, or establish security compliance.

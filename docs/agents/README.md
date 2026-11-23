@@ -72,6 +72,8 @@ Start at [AGENTS.md](../../AGENTS.md), inspect Git status and branch, read the [
 
 ## Controls and limitations
 
+For a project that needs a connector or MCP server, follow the [integration and permissions guide](integrations.md) to record access, configure each client, and verify the connection.
+
 The shared contract does not grant tool permissions. Claude has a project-local deny baseline for private environment files and common destructive Git commands; it also denies `.env.example` under the wildcard. Other clients require their own runtime permission policies. Git hooks add tool-independent checks after bootstrap; `--no-verify`, changed Git configuration, native GitHub APIs or another unconfigured clone can bypass them. Only activated server-side rules can reject direct protected-branch updates independently of the client.
 
 The included scanner checks file names and a few high-confidence credential patterns. It is not a comprehensive secret scan, SAST, dependency audit, penetration test or security certification. Add application-specific checks once the project's stack exists. Do not claim the application passed tests while this is an uncustomized template.
