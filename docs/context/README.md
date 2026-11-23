@@ -18,6 +18,7 @@ Uncustomized template. No application, dependency manifest, deployed service, or
 | Git and CI | [Git workflow](../standards/GIT_WORKFLOW.md) | `.github/`, `scripts/` |
 | Parallel work | [Multi-agent workflow](../workflows/multi-agent.md), [handoff](../templates/handoff.template.md) | Assigned task paths |
 | Security | [Portable security skill](../../.agents/skills/security-review/SKILL.md); applicable project policy | Changed trust boundaries and their controls |
+| Agent integrations and permissions | [Integration setup and verification](../agents/integrations.md) | Project integrations and client configuration |
 | Reproduce a bug | [Debugging skill](../../.agents/skills/debugging/SKILL.md) | Affected behavior and evidence |
 | Choose and report checks | [Verification skill](../../.agents/skills/verification/SKILL.md), [verification commands](../standards/verification.md) | Changed behavior and integration boundaries |
 | Code review | [Independent adversarial review](../workflows/adversarial-review.md) | Complete proposed code change |
