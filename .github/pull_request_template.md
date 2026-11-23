@@ -24,6 +24,13 @@ API/schema/architecture effects when applicable, relevant ADRs, and remaining li
 - Findings and disposition: <!-- links or concise evidence; include unresolved items -->
 - Outcome: <!-- passed / changes requested / pending; re-review after relevant changes -->
 
+## Code standards review (code changes)
+
+- Independent reviewer/session: <!-- code-standards-reviewer or independent fallback -->
+- Reviewed revision: <!-- staged tree or PR revision covering this change -->
+- Findings and disposition: <!-- applicable guideline, code or comment impact, and any unresolved issues -->
+- Outcome: <!-- passed / changes requested / pending -->
+
 ## Security review (code changes)
 
 - Security skill and independent reviewer/session: <!-- security-review; identify reviewer -->

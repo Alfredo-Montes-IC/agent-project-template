@@ -11,6 +11,7 @@ except ModuleNotFoundError:  # Python 3.10 can still run the other checks.
 ROOT = Path(__file__).resolve().parents[1]
 ROLES = {
     'adversarial-reviewer': 'adversarial-code-reviewer',
+    'code-standards-reviewer': 'code-standards-review',
     'security-reviewer': 'security-review',
     'migration-reviewer': 'data-migration',
     'accessibility-reviewer': 'accessibility-review',

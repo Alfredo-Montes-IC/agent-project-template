@@ -12,7 +12,7 @@ Create task branches from current `dev`, use lowercase descriptive names, and re
 
 Run `python3 scripts/bootstrap.py` in every clone to install the [local hooks](../../.githooks/pre-commit). The commit hook checks the exact index snapshot, including shared-skill parity and basic secret hygiene. The push hook inspects destination refs, so `git push origin HEAD:main` is also blocked. Fetch missing history before pushing to an existing branch; unverifiable fast-forwards are rejected. These hooks are not a server-side security boundary.
 
-Code changes require the independent adversarial review in [the review workflow](../workflows/adversarial-review.md) before commit or PR. Record the reviewed revision and outcome in the PR. Repeat review when later changes invalidate it. If an independent reviewer is unavailable, leave the review pending; do not represent self-review as independent or merge as though the gate passed.
+Code changes require independent adversarial and code standards reviews under [the review workflow](../workflows/adversarial-review.md) before commit or PR. Record the reviewed revision and outcome of each review in the PR. Repeat review when later changes invalidate it. If an independent reviewer is unavailable, keep the review pending.
 
 Before opening or marking ready a code PR, obtain an independent `security-review` of the complete base-to-head diff and record its result separately. A generic CI pass or local review receipt does not establish that this review occurred. Re-review affected changes if the reviewed diff changes.
 
