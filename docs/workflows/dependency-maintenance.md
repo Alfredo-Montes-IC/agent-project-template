@@ -1,6 +1,6 @@
 # Dependency and scanner maintenance
 
-The template configures weekly GitHub Actions version updates targeting `dev`, with a `chore/dependabot` branch prefix so generated PRs fit task routing. Verify the first live update PR's branch and checks: client/server feature availability can change. Updates still need adversarial and security review; no auto-merge or direct-to-main exception is configured.
+The template configures weekly GitHub Actions version updates targeting `dev`, with a `chore/dependabot` branch prefix so generated PRs fit task routing. Verify the first live update PR's branch and checks. Follow the [review workflow](adversarial-review.md) for dependency and action updates.
 
 When adding a package ecosystem, inspect real manifests and lockfiles, add the matching Dependabot entry and directories, and test the actual update workflow. Enable dependency alerts where supported by the repository. Dependabot security-update PRs target the default branch and can conflict with this template's `dev -> main` policy. Reproduce the fix on a reviewed task branch from current `dev`, run checks, integrate and promote normally, then resolve the original alert/PR when the fix reaches `main`. Do not bypass routing or hide an unresolved alert. Review critical advisories promptly rather than waiting for the weekly version schedule.
 

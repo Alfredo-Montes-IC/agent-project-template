@@ -8,6 +8,12 @@ The reviewer should actively seek incorrect behavior, missing requirements, regr
 
 The author addresses findings, runs relevant checks, and obtains reviewer re-evaluation of fixes and any material subsequent changes. Resolve blocking findings before commit and PR; record disagreements and unresolved issues without claiming a pass. Identify the exact staged diff for pre-commit review, and the commit SHA for PR review; repeat the review when the final diff differs materially. In the PR, record reviewer identity or session, independence, reviewed revision, findings and disposition, and result. The same person or agent cannot approve their own work merely by using a different role label.
 
+## Code standards review for every code change
+
+Request the independent `code-standards-reviewer` for the same code change alongside the adversarial reviewer and any applicable specialists. Run reviews in parallel when the client and budget permit. Count the extra review session and any re-review in [budget planning](budget-planning.md) when reviewer usage is metered. Check the final staged snapshot before committing. Before opening or promoting a code PR, confirm the review covers the proposed diff and repeat affected review after material changes. Use the [code standards review skill](../../.agents/skills/code-standards-review/SKILL.md) and record its outcome separately.
+
+If the client lacks the role, give the same brief and snapshot to a separate reviewer session or a human reviewer. If parallel review is unavailable, run the reviews in sequence. A reviewer independent of the author may perform more than one review when separate reviewers are unavailable, with each review explicitly performed and reported. Keep the gate pending when no independent reviewer can perform it.
+
 ## Security review before a code PR
 
 Before opening or marking ready any code PR, invoke the portable `security-review` skill in an independent reviewer session and examine the complete PR base-to-head diff in context, even when each commit was reviewed separately. Include the base and head SHAs, task, relevant architecture, existing controls and checks; trace changed trust boundaries and affected paths. Apply the project's actual security policy where relevant. The security reviewer may be the independent adversarial reviewer if it explicitly performs both reviews and reports both outcomes; a separate security reviewer is preferred when practical.
