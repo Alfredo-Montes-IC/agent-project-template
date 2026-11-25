@@ -1,7 +1,7 @@
 ---
 name: Implementation task
 about: Define focused work and ownership
-title: ""
+title: "[TASK]: "
 labels: ""
 assignees: ""
 ---

@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Report observable unexpected behavior
-title: ""
+title: "[BUG]: "
 labels: ""
 assignees: ""
 ---
