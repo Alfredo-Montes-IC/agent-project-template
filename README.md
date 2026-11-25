@@ -101,7 +101,7 @@ After bootstrap, the local commit hook requires a receipt for independent review
 
 Use [budget-planning](docs/workflows/budget-planning.md) with the [budget template](docs/templates/budget.template.md) for agent/subscription/API/tool costs, CI and hosting, including Sites when used. Keep current price sources and dates, low/expected/high estimates, included allowances and incremental cash cost. A budget document does not enforce provider limits or authorize new spending.
 
-The template includes [dependency maintenance](docs/workflows/dependency-maintenance.md), [application CI setup](docs/workflows/project-ci.md), [release and incident recovery](docs/workflows/release-recovery.md), and a [migration template](docs/templates/migration.template.md). Use the `migration-reviewer` for data changes and `accessibility-reviewer` for UI work. The configured rulesets keep zero required human approvals for solo work and require CI when activated; agent reviews remain separately recorded evidence.
+The template includes [dependency maintenance](docs/workflows/dependency-maintenance.md), [application CI setup](docs/workflows/project-ci.md), [release and incident recovery](docs/workflows/release-recovery.md), an optional [ChatGPT Sites workflow](docs/workflows/chatgpt-sites.md) and [Sites template](docs/templates/chatgpt-sites.template.md), and a [migration template](docs/templates/migration.template.md). Use the `migration-reviewer` for data changes and `accessibility-reviewer` for UI work. The configured rulesets keep zero required human approvals for solo work and require CI when activated; agent reviews remain separately recorded evidence.
 
 ## Validate the template
 
