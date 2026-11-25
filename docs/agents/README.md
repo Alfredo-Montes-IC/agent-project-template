@@ -94,7 +94,10 @@ The included scanner checks file names and a few high-confidence credential patt
 [pr-description](../../.agents/skills/pr-description/SKILL.md) is imported verbatim from
 `pr description writer.md`. Use `/pr-description` in clients with slash invocation,
 or `$pr-description` in Codex. Source/destination already given by the user or the
-repository's PR flow do not need to be asked again. Its local `PR_DESCRIPTION.md`
+repository's PR flow do not need to be asked again, and repository issue-linking
+rules (`Refs #<n>` on `task -> dev`; `Closes #<n>` / `Fixes #<n>` on `dev -> main`
+for known governing issues even when `dev` or commit messages omit `#<n>`)
+supersede step 5. Its local `PR_DESCRIPTION.md`
 draft is ignored by Git. Publishing a PR still follows the user's authorization.
 Shared skills and their resources are mirrored identically for Claude by the existing sync script.
 
