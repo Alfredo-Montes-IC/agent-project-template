@@ -4,7 +4,7 @@ Describe the resulting behavior in one sentence.
 
 ## Why
 
-Explain the concrete problem and relevant issue, if any.
+Explain the concrete problem and link the governing issue (`Refs #<n>` on `task -> dev`; `Closes #<n>` or `Fixes #<n>` on `dev -> main` when solved).
 
 ## Changes
 
@@ -13,7 +13,7 @@ Explain the concrete problem and relevant issue, if any.
 - Note API/schema/architecture effects and relevant decisions when applicable.
 
 Task branches target `dev`; only this repository's `dev` targets `main`.
-Delete the task branch after merging into `dev` and promoting into `main`. Keep `dev` and `main`.
+Delete the task branch and verify any solved linked issue closed after merging into `dev` and promoting into `main`. Keep `dev` and `main`.
 
 API/schema/architecture effects when applicable, relevant ADRs, and remaining limitations. Confirm the diff excludes unrelated work and credentials.
 
