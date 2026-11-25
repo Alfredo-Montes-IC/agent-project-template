@@ -28,7 +28,7 @@ Report both the total cost attributable to the project and its incremental cash 
 
 Stay within the user's existing authorization. Before additional optional spending outside that authorization, present the concrete forecast, alternatives and limit requested. Do not purchase a plan, enable auto-recharge, raise limits or create billable resources merely to complete the estimate. A pricing lookup or estimate does not authorize expenditure.
 
-Record the controls actually configured: request/token/retry/loop caps, concurrency and timeouts, provider quotas, enforced spending limits, and alerts where supported. Distinguish alerts from hard stops; delayed usage reporting and in-flight work can affect spend. Never claim the budget file itself blocks charges.
+Record the controls actually configured: request/token/retry/loop caps, concurrency and timeouts, provider quotas, enforced spending limits, and alerts where supported. Distinguish alerts from hard stops; delayed usage reporting and in-flight work can affect spend. Never claim the budget file itself blocks charges. Where workflows, E2E checks, or transformations are repeatable, prefer an "agent once, repeat deterministically" design: pay for agent discovery once per change, verify the outcome independently, save a readable deterministic script or test for zero-model-cost execution, and invoke the model again only when system drift breaks the saved check (then re-verify the repaired script).
 
 Compare actual usage and invoices against the same period and billing account. Explain material variance, refresh stale rates and assumptions, and decide whether to reduce usage, revise the forecast or request more authorization. Preserve a concise decision record without committing private billing data.
 

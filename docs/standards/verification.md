@@ -22,6 +22,8 @@ CI also tests Python 3.10 and runs the pinned Gitleaks scanner on full fetched h
 
 For each actual component, record setup, lint/format, type-check, unit/integration test, build, and local-run commands with working directory and prerequisites. Configure CI to run those checks. There is no application stack or application test suite in this template; do not invent npm/Python application commands or report application security certification.
 
+For repeatable checks and E2E flows discovered by an agent, follow an **agent-once, deterministic-repeat** loop: have an independent verifier validate the outcome, persist the verified steps as a readable, auditable deterministic script or test so subsequent runs require zero model calls, detect breakage automatically via the saved check, and re-invoke an agent only to repair or regenerate (and independently re-verify) the script when the system changes.
+
 ## Report evidence
 
 Record command, working directory, result and limitations in each handoff. Report unavailable checks and pending server protections. Rerun checks after integration when parallel changes can affect each other.

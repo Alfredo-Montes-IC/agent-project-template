@@ -7,4 +7,5 @@ Keep these guidelines limited to practices with a clear benefit for correctness,
 - Keep components cohesive and dependencies explicit; name source directories for their actual responsibilities.
 - Handle failures deliberately and avoid silent exceptions. Mock external services in routine automated checks.
 - Select tests for observable behavior and meaningful failure cases. Match coverage to change risk.
+- **Agent once, repeat deterministically:** When an agent discovers and solves a repeatable workflow, operational task, or E2E test, verify the result independently and save the verified path as a readable, auditable deterministic script, test, or configuration. Run the saved artifact with zero LLM calls thereafter, and re-invoke an agent only when drift or a failing verifier shows that the system changed.
 - Use clear names and types to express behavior. Write concise, neutral comments for intent, constraints, tradeoffs, or edge cases that the code cannot show. Keep comments accurate as behavior changes and remove comments that merely repeat the code or narrate the edit.
