@@ -16,7 +16,7 @@
 - Apply [engineering guidelines](docs/standards/GUIDELINES.md) and the applicable scoped instructions to every code change.
 - Keep secrets and private data out of source, logs, prompts, and handoffs. Commit only sanitized environment examples.
 - For dependency changes, verify provenance, compatibility, and versions using authoritative sources when available; report unresolved verification. For data migrations or destructive operations, identify recovery and rollback needs before execution.
-- Apply `dependency-maintenance`, `data-migration`, `release-recovery`, and `accessibility-review` when their project/task triggers match. During project initialization, document real application CI via `docs/workflows/project-ci.md`.
+- Apply `dependency-maintenance`, `data-migration`, `release-recovery`, and `accessibility-review` when their project/task triggers match. During project initialization, document real application CI via `docs/workflows/project-ci.md`. When a project also hosts on ChatGPT Sites, follow `docs/workflows/chatgpt-sites.md` to keep GitHub as source of truth, check for divergence before editing or publishing, and separate data recovery from code rollback.
 - For projects or changes with cost implications, use `budget-planning`: include agent/reviewer, API/tool, CI and hosting costs (including Sites when used), verify current terms, and stay within existing spending authorization.
 - Run applicable checks listed in `docs/standards/verification.md`. Add meaningful regression coverage when behavior warrants it; do not claim unavailable checks passed.
 - For security-sensitive work and every code PR, invoke the general `security-review` skill by reading `.agents/skills/security-review/SKILL.md` and applying the applicable project policy.

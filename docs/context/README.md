@@ -26,6 +26,7 @@ Uncustomized template. No application, dependency manifest, deployed service, or
 | Budget and service selection | [Budget planning](../workflows/budget-planning.md), [budget template](../templates/budget.template.md) | Project costs, current pricing evidence and limits |
 | Dependencies and secrets | [Dependency maintenance](../workflows/dependency-maintenance.md) | Manifests, workflows, findings and updates |
 | Application CI and delivery | [Project CI and configured job inventory](../workflows/project-ci.md), [release/recovery](../workflows/release-recovery.md) | Actual component checks, deployment and recovery |
+| ChatGPT Sites sync and hosting (optional) | [ChatGPT Sites workflow](../workflows/chatgpt-sites.md), [Sites template](../templates/chatgpt-sites.template.md) | Only when the project hosts on ChatGPT Sites |
 | Data migration | [Migration template](../templates/migration.template.md) | Affected data, compatibility and verified recovery |
 | Additional templates | [Imported source templates](../reference/source-templates/README.md) | Optional references; adapt before use |
 
